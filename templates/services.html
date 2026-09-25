@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Services - Service Request Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+            <div>
+                <h1>Available Services</h1>
+                <p>Choose a service and submit your request.</p>
+            </div>
+
+            <a href="/dashboard" class="card-button">Dashboard</a>
+        </div>
+
+        {% if services %}
+
+        <div class="services-grid">
+
+            {% for service in services %}
+
+            <div class="service-card">
+
+                <div class="service-icon">🛠️</div>
+
+                <h2>{{ service.service_name }}</h2>
+
+                <p class="service-category">
+                    {{ service.category }}
+                </p>
+
+                <p class="service-description">
+                    {{ service.description }}
+                </p>
+
+                <p class="service-status">
+                    <strong>Status:</strong>
+                    <span>{{ service.status }}</span>
+                </p>
+
+                <a
+                    href="/request-service/{{ service.id }}"
+                    class="card-button service-button"
+                >
+                    Request Service
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="welcome-card">
+            <h2>No Services Available</h2>
+            <p>There are currently no services available.</p>
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/service-requests" class="back-link">
+            View My Service Requests →
+        </a>
+
+    </div>
+
+</body>
+</html>

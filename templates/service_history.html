@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service History - Service Request Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+            <div>
+                <h1>My Service History</h1>
+                <p>View your completed service requests.</p>
+            </div>
+
+            <a href="/dashboard" class="card-button">Dashboard</a>
+        </div>
+
+        {% if history %}
+
+        <div class="history-list">
+
+            {% for item in history %}
+
+            <div class="history-card">
+
+                <div class="history-icon">
+                    ✓
+                </div>
+
+                <div class="history-content">
+
+                    <div class="history-header">
+                        <div>
+                            <h2>{{ item.service_name }}</h2>
+
+                            <span class="history-category">
+                                {{ item.category }}
+                            </span>
+                        </div>
+
+                        <span class="status-badge status-completed">
+                            Completed
+                        </span>
+                    </div>
+
+                    <div class="history-details">
+
+                        <p>
+                            <strong>Completion Date:</strong>
+                            {{ item.completion_date }}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            {{ item.status }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="welcome-card">
+            <h2>No Service History</h2>
+            <p>You don't have any completed services yet.</p>
+
+            <br>
+
+            <a href="/services" class="card-button">
+                Browse Services
+            </a>
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/service-requests" class="back-link">
+            ← Back to My Service Requests
+        </a>
+
+    </div>
+
+</body>
+</html>

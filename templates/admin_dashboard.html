@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - Service Request Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage customer service requests and update their status.</p>
+            </div>
+
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
+
+        <div class="admin-summary">
+            <h2>Service Requests</h2>
+            <p>Review and manage all submitted service requests.</p>
+        </div>
+
+        {% if requests %}
+
+        <div class="admin-requests">
+
+            {% for request in requests %}
+
+            <div class="admin-request-card">
+
+                <div class="admin-request-header">
+
+                    <div>
+                        <h2>Request #{{ request.id }}</h2>
+
+                        <span class="admin-service-name">
+                            {{ request.service_name }}
+                        </span>
+                    </div>
+
+                    <span class="status-badge status-{{ request.status|replace(' ', '-') }}">
+                        {{ request.status }}
+                    </span>
+
+                </div>
+
+                <div class="admin-request-details">
+
+                    <div class="detail-item">
+                        <span class="detail-label">Customer</span>
+                        <strong>{{ request.user_name }}</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Email</span>
+                        <strong>{{ request.email }}</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Service</span>
+                        <strong>{{ request.service_name }}</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Request Date</span>
+                        <strong>{{ request.request_date }}</strong>
+                    </div>
+
+                </div>
+
+                <div class="admin-update">
+
+                    <form
+                        method="POST"
+                        action="{{ url_for('main.update_request_status', request_id=request.id) }}"
+                    >
+
+                        <label for="status-{{ request.id }}">
+                            Update Status
+                        </label>
+
+                        <select
+                            id="status-{{ request.id }}"
+                            name="status"
+                        >
+                            <option value="pending"
+                                {% if request.status == "pending" %}selected{% endif %}>
+                                Pending
+                            </option>
+
+                            <option value="in progress"
+                                {% if request.status == "in progress" %}selected{% endif %}>
+                                In Progress
+                            </option>
+
+                            <option value="completed"
+                                {% if request.status == "completed" %}selected{% endif %}>
+                                Completed
+                            </option>
+
+                            <option value="cancelled"
+                                {% if request.status == "cancelled" %}selected{% endif %}>
+                                Cancelled
+                            </option>
+                        </select>
+
+                        <button type="submit">
+                            Update Status
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="welcome-card">
+            <h2>No Service Requests</h2>
+            <p>There are currently no service requests.</p>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

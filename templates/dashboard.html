@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Service Request Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+            <div>
+                <h1>Service Request Management System</h1>
+                <p>Welcome to your dashboard</p>
+            </div>
+
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
+
+        <div class="welcome-card">
+            <h2>Welcome Back! 👋</h2>
+            <p>Manage your service requests and track their progress.</p>
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <div class="card-icon">🛠️</div>
+                <h3>Available Services</h3>
+                <p>Browse all available services and request the service you need.</p>
+                <a href="/services" class="card-button">View Services</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">📋</div>
+                <h3>My Service Requests</h3>
+                <p>View your submitted requests and check their current status.</p>
+                <a href="/service-requests" class="card-button">View Requests</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">📜</div>
+                <h3>Service History</h3>
+                <p>View your completed services and completion details.</p>
+                <a href="/service-history" class="card-button">View History</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,766 @@
+/* General Page Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h3 {
+    margin-bottom: 8px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Forms */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 450px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Links */
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+.nav {
+    background: #1f2937;
+    padding: 15px 25px;
+}
+
+.nav a {
+    color: white;
+    margin-right: 20px;
+}
+
+/* Status */
+.status {
+    font-weight: bold;
+}
+
+/* Horizontal line */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+body.login-page {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #dbeafe, #f8fafc);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 32px;
+    color: #1e3a8a;
+}
+
+.login-header p {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.login-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin: 0 0 8px 0;
+    color: #1e293b;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.login-card form {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.login-card label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #334155;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 0 0 18px 0;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #1d4ed8;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 22px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.register-text a {
+    font-weight: bold;
+}
+/* Register Page Select */
+
+.login-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 0 0 18px 0;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    color: #334155;
+}
+
+.login-card select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+/* =========================
+   DASHBOARD
+   ========================= */
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    color: #1e3a8a;
+    font-size: 30px;
+}
+
+.dashboard-header p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+.logout-button {
+    background: #dc2626;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    background: #b91c1c;
+    text-decoration: none;
+}
+
+.welcome-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.welcome-card h2 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+.welcome-card p {
+    color: #64748b;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h3 {
+    color: #1e293b;
+    font-size: 20px;
+}
+
+.dashboard-card p {
+    color: #64748b;
+    line-height: 1.5;
+    min-height: 65px;
+}
+
+.card-button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-button:hover {
+    background: #1d4ed8;
+    text-decoration: none;
+}
+
+/* Dashboard responsive design */
+
+@media (max-width: 800px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+/* =========================
+   SERVICES PAGE
+   ========================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.service-card h2 {
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.service-category {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.service-description {
+    color: #64748b;
+    line-height: 1.5;
+    min-height: 50px;
+    margin: 18px 0;
+}
+
+.service-status {
+    color: #334155;
+    margin-bottom: 20px;
+}
+
+.service-status span {
+    color: #16a34a;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.service-button {
+    display: inline-block;
+}
+
+.back-link {
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Services responsive design */
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   SERVICE REQUESTS
+   ========================= */
+
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.request-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.request-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.request-card h2 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+}
+
+.request-category {
+    margin: 0;
+    color: #64748b;
+}
+
+.request-details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.request-details p {
+    color: #475569;
+}
+
+/* Status badges */
+
+.status-badge {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-in-progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .request-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* =========================
+   SERVICE HISTORY
+   ========================= */
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.history-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.history-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    background: #dcfce7;
+    color: #16a34a;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.history-content {
+    flex: 1;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.history-header h2 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+}
+
+.history-category {
+    display: inline-block;
+
+    background: #dbeafe;
+    color: #1e40af;
+
+    padding: 5px 12px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.history-details {
+    margin-top: 18px;
+    padding-top: 15px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.history-details p {
+    color: #475569;
+    margin: 8px 0;
+}
+
+@media (max-width: 600px) {
+
+    .history-card {
+        flex-direction: column;
+    }
+
+    .history-header {
+        flex-direction: column;
+    }
+}
+/* =========================
+   ADMIN DASHBOARD
+   ========================= */
+
+.admin-summary {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.admin-summary h2 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+}
+
+.admin-summary p {
+    margin: 0;
+    color: #64748b;
+}
+
+.admin-requests {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-request-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.admin-request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-request-header h2 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+}
+
+.admin-service-name {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.admin-request-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detail-label {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.detail-item strong {
+    color: #334155;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.admin-update {
+    padding-top: 18px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.admin-update form {
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-update label {
+    font-weight: bold;
+    color: #334155;
+}
+
+.admin-update select {
+    width: 180px;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+}
+
+.admin-update button {
+    padding: 10px 18px;
+}
+
+/* Admin responsive design */
+
+@media (max-width: 900px) {
+    .admin-request-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .admin-request-header {
+        flex-direction: column;
+    }
+
+    .admin-request-details {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-update form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-update select {
+        width: 100%;
+    }
+}
