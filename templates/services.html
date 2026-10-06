@@ -1,75 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Available Services - Service Request Management System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <div class="dashboard-container">
+    <div class="services-page">
 
-        <div class="dashboard-header">
-            <div>
-                <h1>Available Services</h1>
-                <p>Choose a service and submit your request.</p>
+        <!-- Animated background -->
+        <div class="services-orb services-orb-one"></div>
+        <div class="services-orb services-orb-two"></div>
+
+        <div class="services-container">
+
+            <!-- HEADER -->
+            <header class="services-topbar">
+
+                <div class="services-brand">
+
+                    <div class="services-brand-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+                        <h1>Available Services</h1>
+                        <p>Choose a service and submit your request.</p>
+                    </div>
+
+                </div>
+
+                <a href="/dashboard" class="services-dashboard-btn">
+                    ← Dashboard
+                </a>
+
+            </header>
+
+
+            <!-- HERO -->
+            <section class="services-hero">
+
+                <div>
+
+                    <span class="services-label">
+                        OUR SERVICES
+                    </span>
+
+                    <h2>
+                        How can we
+                        <span>help you?</span>
+                    </h2>
+
+                    <p>
+                        Select the service you need and submit a request.
+                        Our system makes it simple to track your service
+                        from request to completion.
+                    </p>
+
+                </div>
+
+                <div class="services-hero-icon">
+                    🛠️
+                </div>
+
+            </section>
+
+
+            {% if services %}
+
+            <!-- SERVICE COUNT -->
+            <div class="services-heading">
+
+                <div>
+                    <span>AVAILABLE NOW</span>
+                    <h2>Choose a Service</h2>
+                </div>
+
+                <div class="service-count">
+                    {{ services|length }} Services
+                </div>
+
             </div>
 
-            <a href="/dashboard" class="card-button">Dashboard</a>
-        </div>
 
-        {% if services %}
+            <!-- SERVICES -->
+            <div class="services-grid">
 
-        <div class="services-grid">
+                {% for service in services %}
 
-            {% for service in services %}
+                <article class="service-card animated-service-card">
 
-            <div class="service-card">
+                    <div class="service-card-top">
 
-                <div class="service-icon">🛠️</div>
+                        <div class="service-icon">
+                            🛠️
+                        </div>
 
-                <h2>{{ service.service_name }}</h2>
+                        <span class="service-number">
+                            {{ "%02d"|format(loop.index) }}
+                        </span>
 
-                <p class="service-category">
-                    {{ service.category }}
+                    </div>
+
+
+                    <div class="service-card-content">
+
+                        <span class="service-category">
+                            {{ service.category }}
+                        </span>
+
+                        <h2>
+                            {{ service.service_name }}
+                        </h2>
+
+                        <p class="service-description">
+                            {{ service.description }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-status-row">
+
+                        <span class="service-status-label">
+                            Availability
+                        </span>
+
+                        <span class="service-status">
+                            <span class="status-dot"></span>
+                            {{ service.status }}
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="/request-service/{{ service.id }}"
+                        class="service-request-button"
+                    >
+                        <span>Request Service</span>
+                        <span class="service-arrow">→</span>
+                    </a>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+
+            {% else %}
+
+            <!-- EMPTY STATE -->
+            <div class="services-empty">
+
+                <div class="empty-icon">
+                    🔧
+                </div>
+
+                <h2>No Services Available</h2>
+
+                <p>
+                    There are currently no services available.
+                    Please check again later.
                 </p>
 
-                <p class="service-description">
-                    {{ service.description }}
-                </p>
-
-                <p class="service-status">
-                    <strong>Status:</strong>
-                    <span>{{ service.status }}</span>
-                </p>
-
-                <a
-                    href="/request-service/{{ service.id }}"
-                    class="card-button service-button"
-                >
-                    Request Service
+                <a href="/dashboard" class="service-request-button">
+                    Back to Dashboard
                 </a>
 
             </div>
 
-            {% endfor %}
+            {% endif %}
+
+
+            <!-- BOTTOM NAVIGATION -->
+            <div class="services-bottom-nav">
+
+                <a href="/service-requests">
+                    View My Service Requests →
+                </a>
+
+                <a href="/service-history">
+                    View Service History →
+                </a>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <footer class="services-footer">
+
+                <span>
+                    ⚡ Service Request Management System
+                </span>
+
+                <span>
+                    Simple • Fast • Reliable
+                </span>
+
+            </footer>
 
         </div>
-
-        {% else %}
-
-        <div class="welcome-card">
-            <h2>No Services Available</h2>
-            <p>There are currently no services available.</p>
-        </div>
-
-        {% endif %}
-
-        <br>
-
-        <a href="/service-requests" class="back-link">
-            View My Service Requests →
-        </a>
 
     </div>
 

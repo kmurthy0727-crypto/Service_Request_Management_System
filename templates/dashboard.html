@@ -1,50 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dashboard - Service Request Management System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <div class="dashboard-container">
+    <div class="dashboard-page">
 
-        <div class="dashboard-header">
-            <div>
-                <h1>Service Request Management System</h1>
-                <p>Welcome to your dashboard</p>
+        <!-- Animated background -->
+        <div class="dashboard-orb orb-one"></div>
+        <div class="dashboard-orb orb-two"></div>
+        <div class="dashboard-orb orb-three"></div>
+
+        <div class="dashboard-container">
+
+            <!-- HEADER -->
+            <header class="dashboard-topbar">
+
+                <div class="brand-section">
+                    <div class="brand-icon">⚡</div>
+
+                    <div>
+                        <h1>Service Request</h1>
+                        <p>Management System</p>
+                    </div>
+                </div>
+
+                <a href="/logout" class="logout-button">
+                    <span>↪</span>
+                    Logout
+                </a>
+
+            </header>
+
+
+            <!-- WELCOME -->
+            <section class="dashboard-welcome">
+
+                <div class="welcome-content">
+
+                    <div class="welcome-badge">
+                        <span class="pulse-dot"></span>
+                        Customer Dashboard
+                    </div>
+
+                    <h2>
+                        Welcome Back! <span class="wave">👋</span>
+                    </h2>
+
+                    <p>
+                        Manage your services, track requests and view
+                        your service history from one place.
+                    </p>
+
+                </div>
+
+                <div class="welcome-illustration">
+                    <div class="floating-icon icon-one">⚙️</div>
+                    <div class="floating-icon icon-two">🛠️</div>
+                    <div class="floating-icon icon-three">📋</div>
+                    <div class="main-illustration">🚀</div>
+                </div>
+
+            </section>
+
+
+            <!-- QUICK STATS -->
+            <section class="quick-stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">🛠️</div>
+
+                    <div>
+                        <span class="stat-label">Services</span>
+                        <strong>Available</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">📋</div>
+
+                    <div>
+                        <span class="stat-label">Requests</span>
+                        <strong>Track</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+
+                    <div>
+                        <span class="stat-label">History</span>
+                        <strong>Completed</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- SECTION TITLE -->
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-small-title">
+                        QUICK ACCESS
+                    </span>
+
+                    <h2>What would you like to do?</h2>
+                </div>
+
+                <span class="section-line"></span>
+
             </div>
 
-            <a href="/logout" class="logout-button">Logout</a>
-        </div>
 
-        <div class="welcome-card">
-            <h2>Welcome Back! 👋</h2>
-            <p>Manage your service requests and track their progress.</p>
-        </div>
+            <!-- DASHBOARD CARDS -->
+            <section class="dashboard-grid">
 
-        <div class="dashboard-grid">
 
-            <div class="dashboard-card">
-                <div class="card-icon">🛠️</div>
-                <h3>Available Services</h3>
-                <p>Browse all available services and request the service you need.</p>
-                <a href="/services" class="card-button">View Services</a>
-            </div>
+                <!-- SERVICES -->
+                <div class="dashboard-card animated-card">
 
-            <div class="dashboard-card">
-                <div class="card-icon">📋</div>
-                <h3>My Service Requests</h3>
-                <p>View your submitted requests and check their current status.</p>
-                <a href="/service-requests" class="card-button">View Requests</a>
-            </div>
+                    <div class="card-top">
 
-            <div class="dashboard-card">
-                <div class="card-icon">📜</div>
-                <h3>Service History</h3>
-                <p>View your completed services and completion details.</p>
-                <a href="/service-history" class="card-button">View History</a>
-            </div>
+                        <div class="card-icon services-icon">
+                            🛠️
+                        </div>
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Available Services</h3>
+
+                        <p>
+                            Explore the services available and request
+                            the support you need.
+                        </p>
+
+                    </div>
+
+                    <a href="/services" class="card-button">
+
+                        <span>Explore Services</span>
+
+                        <span class="arrow">→</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- REQUESTS -->
+                <div class="dashboard-card animated-card">
+
+                    <div class="card-top">
+
+                        <div class="card-icon requests-icon">
+                            📋
+                        </div>
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>My Service Requests</h3>
+
+                        <p>
+                            Check your submitted requests and monitor
+                            their current status.
+                        </p>
+
+                    </div>
+
+                    <a href="/service-requests" class="card-button">
+
+                        <span>View Requests</span>
+
+                        <span class="arrow">→</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- HISTORY -->
+                <div class="dashboard-card animated-card">
+
+                    <div class="card-top">
+
+                        <div class="card-icon history-icon">
+                            📜
+                        </div>
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Service History</h3>
+
+                        <p>
+                            Review your completed services and
+                            completion details.
+                        </p>
+
+                    </div>
+
+                    <a href="/service-history" class="card-button">
+
+                        <span>View History</span>
+
+                        <span class="arrow">→</span>
+
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+
+                <span>
+                    ⚡ Service Request Management System
+                </span>
+
+                <span>
+                    Secure • Simple • Efficient
+                </span>
+
+            </footer>
 
         </div>
 

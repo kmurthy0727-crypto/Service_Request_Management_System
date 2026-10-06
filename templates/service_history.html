@@ -1,93 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Service History - Service Request Management System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <div class="dashboard-container">
+    <div class="history-page">
 
-        <div class="dashboard-header">
-            <div>
-                <h1>My Service History</h1>
-                <p>View your completed service requests.</p>
-            </div>
+        <!-- Animated background -->
+        <div class="history-orb history-orb-one"></div>
+        <div class="history-orb history-orb-two"></div>
 
-            <a href="/dashboard" class="card-button">Dashboard</a>
-        </div>
+        <div class="history-container">
 
-        {% if history %}
+            <!-- HEADER -->
+            <header class="history-topbar">
 
-        <div class="history-list">
+                <div class="history-brand">
 
-            {% for item in history %}
+                    <div class="history-brand-icon">
+                        📜
+                    </div>
 
-            <div class="history-card">
+                    <div>
+                        <h1>Service History</h1>
+                        <p>View your completed service requests.</p>
+                    </div>
 
-                <div class="history-icon">
+                </div>
+
+                <a href="/dashboard" class="history-dashboard-btn">
+                    ← Dashboard
+                </a>
+
+            </header>
+
+
+            <!-- HERO -->
+            <section class="history-hero">
+
+                <div>
+
+                    <span class="history-label">
+                        COMPLETED SERVICES
+                    </span>
+
+                    <h2>
+                        Your service
+                        <span>journey</span>
+                    </h2>
+
+                    <p>
+                        Keep track of the services you have completed
+                        and review your service history anytime.
+                    </p>
+
+                </div>
+
+                <div class="history-hero-icon">
                     ✓
                 </div>
 
-                <div class="history-content">
+            </section>
 
-                    <div class="history-header">
-                        <div>
-                            <h2>{{ item.service_name }}</h2>
 
-                            <span class="history-category">
-                                {{ item.category }}
-                            </span>
-                        </div>
+            {% if history %}
 
-                        <span class="status-badge status-completed">
-                            Completed
-                        </span>
-                    </div>
+            <!-- HISTORY HEADING -->
+            <div class="history-heading">
 
-                    <div class="history-details">
+                <div>
+                    <span>YOUR RECORD</span>
+                    <h2>Completed Services</h2>
+                </div>
 
-                        <p>
-                            <strong>Completion Date:</strong>
-                            {{ item.completion_date }}
-                        </p>
-
-                        <p>
-                            <strong>Status:</strong>
-                            {{ item.status }}
-                        </p>
-
-                    </div>
-
+                <div class="history-count">
+                    {{ history|length }} Completed
                 </div>
 
             </div>
 
-            {% endfor %}
+
+            <!-- TIMELINE -->
+            <div class="history-timeline">
+
+                <div class="timeline-line"></div>
+
+                {% for item in history %}
+
+                <article class="modern-history-card">
+
+                    <!-- TIMELINE DOT -->
+                    <div class="timeline-dot">
+                        ✓
+                    </div>
+
+
+                    <!-- CARD HEADER -->
+                    <div class="history-card-header">
+
+                        <div class="history-title-section">
+
+                            <div class="history-service-icon">
+                                🛠️
+                            </div>
+
+                            <div>
+
+                                <span class="history-number">
+                                    COMPLETED SERVICE #{{ "%02d"|format(loop.index) }}
+                                </span>
+
+                                <h2>
+                                    {{ item.service_name }}
+                                </h2>
+
+                                <span class="history-category">
+                                    {{ item.category }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="status-badge status-completed">
+                            ✓ Completed
+                        </span>
+
+                    </div>
+
+
+                    <!-- DETAILS -->
+                    <div class="modern-history-details">
+
+                        <div class="history-detail">
+
+                            <div class="history-detail-icon">
+                                📅
+                            </div>
+
+                            <div>
+                                <small>Completion Date</small>
+
+                                <strong>
+                                    {{ item.completion_date }}
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="history-detail">
+
+                            <div class="history-detail-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <small>Status</small>
+
+                                <strong class="completed-text">
+                                    {{ item.status }}
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SUCCESS MESSAGE -->
+                    <div class="completion-message">
+
+                        <span class="success-check">
+                            ✓
+                        </span>
+
+                        <span>
+                            Service successfully completed
+                        </span>
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+
+            {% else %}
+
+            <!-- EMPTY STATE -->
+            <div class="history-empty">
+
+                <div class="empty-history-icon">
+                    📜
+                </div>
+
+                <h2>No Service History Yet</h2>
+
+                <p>
+                    You don't have any completed services yet.
+                    Once a service request is completed, it will
+                    appear here.
+                </p>
+
+                <a href="/services" class="history-primary-button">
+                    Browse Services →
+                </a>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- NAVIGATION -->
+            <div class="history-navigation">
+
+                <a href="/service-requests">
+                    ← My Service Requests
+                </a>
+
+                <a href="/services">
+                    Browse Services →
+                </a>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <footer class="history-footer">
+
+                <span>
+                    ⚡ Service Request Management System
+                </span>
+
+                <span>
+                    Completed • Verified • Recorded
+                </span>
+
+            </footer>
 
         </div>
-
-        {% else %}
-
-        <div class="welcome-card">
-            <h2>No Service History</h2>
-            <p>You don't have any completed services yet.</p>
-
-            <br>
-
-            <a href="/services" class="card-button">
-                Browse Services
-            </a>
-        </div>
-
-        {% endif %}
-
-        <br>
-
-        <a href="/service-requests" class="back-link">
-            ← Back to My Service Requests
-        </a>
 
     </div>
 

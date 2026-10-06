@@ -1,70 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Create Account - Service Request Management System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="login-page">
+<body class="register-page">
 
-    <div class="login-container">
+    <!-- Animated background -->
+    <div class="register-orb register-orb-one"></div>
+    <div class="register-orb register-orb-two"></div>
+    <div class="register-orb register-orb-three"></div>
 
-        <div class="login-header">
-            <h1>Service Request</h1>
-            <h1>Management System</h1>
-            <p>Create your account and request services easily</p>
+
+    <div class="register-wrapper">
+
+        <!-- LEFT BRAND SECTION -->
+        <div class="register-brand">
+
+            <div class="register-brand-icon">
+                ⚡
+            </div>
+
+            <span class="register-label">
+                SERVICE REQUEST SYSTEM
+            </span>
+
+            <h1>
+                Create Your
+                <span>Account</span>
+            </h1>
+
+            <p>
+                Join the Service Request Management System and
+                easily request, track and manage your services.
+            </p>
+
+            <div class="register-features">
+
+                <div class="register-feature">
+                    <span>✓</span>
+                    <div>
+                        <strong>Easy Service Requests</strong>
+                        <small>Request services in just a few clicks.</small>
+                    </div>
+                </div>
+
+                <div class="register-feature">
+                    <span>✓</span>
+                    <div>
+                        <strong>Track Your Requests</strong>
+                        <small>Monitor the progress of your requests.</small>
+                    </div>
+                </div>
+
+                <div class="register-feature">
+                    <span>✓</span>
+                    <div>
+                        <strong>View Service History</strong>
+                        <small>Keep track of your completed services.</small>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="login-card">
 
-            <h2>Create Account</h2>
-            <p class="login-subtitle">Register a new account</p>
+        <!-- REGISTER CARD -->
+        <div class="register-card">
+
+            <div class="register-card-header">
+
+                <div class="register-card-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Create Account</h2>
+                    <p>Register a new account</p>
+                </div>
+
+            </div>
+
 
             <form method="POST" action="/register">
 
-                <label>Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required
+
+                <!-- NAME -->
+                <div class="register-input-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <div class="register-input-wrapper">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="register-input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="register-input-wrapper">
+
+                        <span>✉️</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="register-input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="register-input-wrapper">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+                <div class="register-input-group">
+
+                    <label for="role">
+                        Account Type
+                    </label>
+
+                    <div class="register-input-wrapper">
+
+                        <span>🎯</span>
+
+                        <select
+                            id="role"
+                            name="role"
+                            required
+                        >
+
+                            <option value="customer">
+                                Customer
+                            </option>
+
+                            <option value="service_coordinator">
+                                Service Coordinator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="register-button"
                 >
-
-                <label>Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
-                <label>Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Create a password"
-                    required
-                >
-
-                <label>Account Type</label>
-                <select name="role" required>
-                    <option value="customer">Customer</option>
-                    <option value="service_coordinator">Service Coordinator</option>
-                </select>
-
-                <button type="submit" class="login-button">
-                    Create Account
+                    <span>Create Account</span>
+                    <span>→</span>
                 </button>
 
             </form>
 
-            <p class="register-text">
-                Already have an account?
-                <a href="/">Login</a>
-            </p>
+
+            <!-- LOGIN -->
+            <div class="register-login">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="/">
+                    Login
+                </a>
+
+            </div>
 
         </div>
 
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="register-footer">
+        ⚡ Service Request Management System
     </div>
 
 </body>
